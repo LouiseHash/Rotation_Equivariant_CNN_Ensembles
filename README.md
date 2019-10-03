@@ -1,5 +1,8 @@
 # Rotation-equivariant convolutional neural network ensembles in image processing
 <img src="https://github.com/LouiseHash/Rotation_Equivariant_CNN_Ensembles/blob/master/figures/Fig1.PNG" width="600">
+In our real life, image might largely rotated. Take self-driving car as an example, as we can see in the figure above, the road sign could be rotated. If we use traditional convolutional neural networks, we might result in a low training accuracy. This work aims to solve this problem. In fact, there were a series of researches, using better filters and activation functions, performed rigorous analysis to this problem with promising results. If you are looking for solving this problem thoroughly in a rigorous way, this repo might not be a good place for you. 
+
+However, if you are considering this problem more from a practical perspective, the architecture that we propose could be a good choice for you. The code is not hard to understand and implement. If you know how to train a convolutional neural network, it will be definitely easy for you to reimplement this algorithm. This algorithm simply trains several convolutional neural networks in different angles and combine them. This architecture is also not difficult to debug, and remains certain interoperability. We used ResNet in our work, but it could also be replaced by any convolutional neural networks such as VGG, U-Net, and so on. 
 
 ## Published in UbiComp/ISWC '19 Adjunct 2019
 
@@ -16,3 +19,7 @@ The image above could help to understand the architecture. We are combining resu
 Our experiment is built on ResNet-18. We use an ensemble of ResNet-18 to solve the problem. The performances is reported as the table below. We could see its ability for predicting harder datasets, such as KMNIST. 
 
 <img src="https://github.com/LouiseHash/Rotation_Equivariant_CNN_Ensembles/blob/master/figures/Fig3.PNG" width="700">
+
+#### Tricks in training
+The only trick that we are using here is the overlapping of the training angles. Suppose we have 8 convolutional neural networks in this ensemble. As you could check in the jupyter notebook, there is a huge angle of overlapping for these ensemble members. It is not hard to explain since the neural networks will predict a misleading result for images with different angles, if the network is completely not trained by this angle. This will be hard to produce a stable training result. Instead, adding certain overlapping for each ensemble members could make this process more stable. 
+#### We recommend you to run this code on Google's colab for simplicity. Future version of this code will be available for the next step. 
