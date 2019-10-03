@@ -4,7 +4,9 @@ In our real life, image might largely rotated. Take self-driving car as an examp
 
 However, if you are considering this problem more from a practical perspective, the architecture that we propose could be a good choice for you. The code is not hard to understand and implement. If you know how to train a convolutional neural network, it will be definitely easy for you to reimplement this algorithm. This algorithm simply trains several convolutional neural networks in different angles and combine them. This architecture is also not difficult to debug, and remains certain interoperability. We used ResNet in our work, but it could also be replaced by any convolutional neural networks such as VGG, U-Net, and so on. 
 
-## Published in UbiComp/ISWC '19 Adjunct 2019
+## [Published in UbiComp/ISWC '19 Adjunct 2019](https://dl.acm.org/ft_gateway.cfm?id=3349330&type=pdf)
+[Recorded link in CPD-19.](https://www.youtube.com/watch?v=onOCPi-Fao4)
+
 
 #### Abstract:
 For the present engineering of neural networks, rotation invariant is hard to be obtained. Rotation symmetry is an important characteristic in our physical world. In image recognition, using rotated images would largely decrease the performance of neural networks. This situation seriously hindered the application of neural networks in the real-world, such as human tracking, self-driving cars, and intelligent surveillance. In this paper, we would like to present a rotation-equivariant design of convolutional neural network ensembles to counteract the problem of rotated image processing task. This convolutional neural network ensembles combine multiple convolutional neural networks trained by different ranges of rotation angles respectively. In our proposed theory, the model lowers the training difficulty by learning with smaller separations of random rotation angles instead of a huge one. Experiments are reported in this paper. The convolutional neural network ensembles could reach 96.35% on rotated MNIST datasets, 84.9% on rotated Fashion-MNIST datasets, and 91.35% on rotated KMNIST datasets. These results are comparable to current state-of-the-art performance.
