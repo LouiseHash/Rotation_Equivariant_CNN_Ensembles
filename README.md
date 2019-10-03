@@ -41,8 +41,42 @@ import torch
 
 #### How to run the code
 If you wish to run this code on your computer/server, please run the **run.py** file. 
-```python
+```shell
 python run.py
 python run.py --dataset 'mnist' --ensemble_num 9 --train_epoch 6
 ```
 Dataset, ensemble_num, and train_epoch are three hyper-parameters that we could specify. 
+
+#### How to use the library
+To use the library, it is implemented in **RotEqCnn.py** file. 
+```python
+from RotEqCnn import RotEqCnn
+
+# Initalize a rotation equivariant convolutional neural network ensembles
+rotEqCNN = RotEqCnn()
+# You could specify the dataset like this
+# rotEqCNN = RotEqCnn(dataset = 'mnist')
+# You could specify the ensemble member number like this
+# rotEqCNN = RotEqCnn(ensemble_num = 15)
+# You could specify the training epoch number like this
+# rotEqCNN = RotEqCnn(train_epoch = 10)
+
+# Get rotated datasets for training using the following code
+rotEqCNN.get_dataset()
+
+# Initialize different convolutional neural networks using the following code
+recnn.init_models()
+
+# Train the convolutional neural networks, and combine the encoded set to get final prediction
+recnn.train()
+
+# Get test accuracy
+recnn.show_test_result()
+```
+
+#### Change of base convolutional neural network
+If you are trying to change the base convolutional neural network, please check **resnet.py** to change this model directly. Or you could change to your customized neural network by replacing the code completely with a new file. 
+
+## Contribution
+#### Current version
+I should apologize here. Since I was too busy on my school works, two parts are still not available at this moment. One is the change of datasets (only MNIST is available at this moment), and the other one is the rotation angles. Please feel free to create a thread or possible pull request directly if you have a tested revision. 
