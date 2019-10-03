@@ -24,4 +24,25 @@ Our experiment is built on ResNet-18. We use an ensemble of ResNet-18 to solve t
 
 #### Tricks in training
 The only trick that we are using here is the **overlapping of the training angles**. Suppose we have 8 convolutional neural networks in this ensemble. As you could check in the jupyter notebook, there is a huge angle of overlapping for these ensemble members. It is not hard to explain since the neural networks will predict a misleading result for images with different angles, if the network is completely not trained by this angle. This will be hard to produce a stable training result. Instead, adding certain overlapping for each ensemble members could make this process more stable. 
-#### We recommend you to run this code on Google's colab for simplicity. Future version of this code will be available for the next step. 
+#### We recommend you to run this code on Google's colab for simplicity, using the jupyter notebook that we provided. Future version of this code will be available for the next step. 
+
+## Usage
+#### Environmental setup
+```python
+python3
+pytorch/1.0
+sklearn
+```
+Please check this [link](https://pytorch.org/get-started/locally/) for pytorch download, and this [link](https://scikit-learn.org/stable/install.html) for sklearn. These are a lot of resources on how to install these two packages properly. You could check your pytorch and sklearn by importing them in your terminal. PyCharm also have a good support to install them locally. 
+```python
+import sklearn
+import torch
+```
+
+#### How to run the code
+If you wish to run this code on your computer/server, please run the **run.py** file. 
+```python
+python run.py
+python run.py --dataset 'mnist' --ensemble_num 9 --train_epoch 6
+```
+Dataset, ensemble_num, and train_epoch are three hyper-parameters that we could specify. 
