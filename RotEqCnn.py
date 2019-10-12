@@ -28,7 +28,7 @@ class RotEqCNN():
 		self.model=[]
 		self.optimizer=[]
 		self.criterion = nn.CrossEntropyLoss()
-		self.device = torch.device("cuda:0")
+		self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 		self.encoded_train_data = []
 		self.encoded_train_label = []
 		self.mlp = None
@@ -107,7 +107,7 @@ class RotEqCNN():
 					 
 						self.encoded_train_data.append(d)
 						self.encoded_train_label.append(labels[i])
-				    
+
 		X_train, self.X_test, y_train, self.y_test = train_test_split(self.encoded_train_data, self.encoded_train_label, test_size=0.05, random_state=0)
 
 		self.mlp = MLPClassifier(alpha=1, max_iter=1000)
