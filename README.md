@@ -79,4 +79,4 @@ If you are trying to change the base convolutional neural network, please check 
 
 ## Contribution
 #### Current version
-I should apologize here. Since I was too busy on my school works, two parts are still not available at this moment. One is the change of datasets (only MNIST is available at this moment), and the other one is the rotation angles. Please feel free to create a thread or possible pull request directly if you have a tested revision. 
+I should apologize here. Since I was too busy on my school works, the change of datasets (only MNIST is available at this moment)is not available till now. Please feel free to create a thread or possible pull request directly if you have a tested revision. 
